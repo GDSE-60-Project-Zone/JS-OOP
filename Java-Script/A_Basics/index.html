@@ -962,17 +962,32 @@
     // // c.id;// error
     // c.name; //Ramal
 
-    function Car(make, year) {
-        this.make = make;
-        this.year = year;
-        this.park = function () {
-            console.log(`${this.make} - ${this.year} is parking`)
-        }
-    }
-    var car = new Car("BMW", "2020");
-    // car.make;
-    // car.year;
+    // function Car(make, year) {
+    //     this.make = make;
+    //     this.year = year;
+    //     this.park = function () {
+    //         console.log(`${this.make} - ${this.year} is parking`)
+    //     }
+    // }
+    // var car = new Car("BMW", "2020");
+    // // car.make;
+    // // car.year;
     // car.park();
+
+
+    //Using the prior knowledge encapsulate the following function
+    function Customer(id,name,address,salary){
+        this.id=id;
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+    }
+
+    var customer= new Customer("C001","Dasun");
+    customer.id;
+    customer.name;
+
+
 
 
 </script>
