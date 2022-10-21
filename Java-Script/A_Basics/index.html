@@ -753,6 +753,13 @@
     //configurable
 
 
+    // How to make properties values read-only
+    Object.defineProperty(customer,'name',{
+        writable:false
+    })
+    customer.name="Kamal"; // now it doesn't change
+
+
 
 
 
