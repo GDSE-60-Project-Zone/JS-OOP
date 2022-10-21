@@ -694,24 +694,36 @@
 
     // Object to Continue
     //Literal Base Object
-    var myOb={
-        id:"C001", // key value pairs
-        name:"Kasun"
+    // var myOb={
+    //     id:"C001", // key value pairs
+    //     name:"Kasun"
+    // }
+    //
+    // console.log(myOb);
+    // //don notation and  bracket notation
+    // //how to get values form an object
+    // myOb.id;// C001
+    // myOb.name//Kasun
+    //
+    // //can we change C001 to C00-001
+    // myOb.id='C00-001';
+    // myOb.name='Akila';
+    //
+    // console.log(myOb);
+
+
+    //How to resolve the model problem
+    // Object.assign('target','source');
+
+    //we can use Object.assign method to make a clone of an object
+    var customer={
+        id:"C001"
     }
 
-    console.log(myOb);
-    //don notation and  bracket notation
-    //how to get values form an object
-    myOb.id;// C001
-    myOb.name//Kasun
-
-    //can we change C001 to C00-001
-    myOb.id='C00-001';
-    myOb.name='Akila';
-
-    console.log(myOb);
-
-
+    var customers=[];
+    var c=Object.assign({},customer); // copy customer object properties to target object and
+    //and return c as a new object
+    customers.push(c);
 
 
 

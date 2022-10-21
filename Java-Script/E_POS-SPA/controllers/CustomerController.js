@@ -107,12 +107,12 @@ function setTextFieldValues(id, name, address, salary) {
 
 
 function saveCustomer(customerOb) {
-    let newCustomer = Object.assign({}, customer);
-    newCustomer.id = customerOb.id;
-    newCustomer.name = customerOb.name;
-    newCustomer.address = customerOb.address;
-    newCustomer.salary = customerOb.salary;
-    customers.push(newCustomer);
+    // let newCustomer = Object.assign({}, customer);
+    customer.id = customerOb.id;
+    customer.name = customerOb.name;
+    customer.address = customerOb.address;
+    customer.salary = customerOb.salary;
+    customers.push(customer);
     loadAllCustomers();
 }
 
