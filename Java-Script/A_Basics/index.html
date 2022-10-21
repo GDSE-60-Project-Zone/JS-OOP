@@ -716,14 +716,44 @@
     // Object.assign('target','source');
 
     //we can use Object.assign method to make a clone of an object
+    // var customer={
+    //     id:"C001"
+    // }
+    //
+    // var customers=[];
+    // var c=Object.assign({},customer); // copy customer object properties to target object and
+    // //and return c as a new object
+    // customers.push(c);
+
+
+    // Let's explore objects furthermore
     var customer={
         id:"C001"
-    }
+    };
 
-    var customers=[];
-    var c=Object.assign({},customer); // copy customer object properties to target object and
-    //and return c as a new object
-    customers.push(c);
+    //can we change values of an object// yes
+    customer.id="C002";
+
+    //can we add properties dynamically to an object //yes
+    customer.name="Kamal";
+    customer.age=20;
+
+    //can we delete properties of an object.? //yes
+    delete customer.id;
+
+    //can we get all the keys object of an object at
+    // once.? //yes
+    Object.keys(customer);
+
+    //So can we manage them as we wanted? //yes
+    //how.? we have
+    //Property Descriptors
+    //writable
+    //enumerable
+    //configurable
+
+
+
 
 
 
