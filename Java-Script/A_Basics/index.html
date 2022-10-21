@@ -884,26 +884,42 @@
     // a = 100
     // b =200
     // create a method called calculateTotal(400)
-    // The total is 700
-    var calculate={
-        a:100,
-        b:200,
-        calculateTotal:function(value){
-            console.log(`The total is ${this.a+this.b+value}`);
-        }
-    }
-    calculate.calculateTotal(100);
+    // // The total is 700
+    // var calculate={
+    //     a:100,
+    //     b:200,
+    //     calculateTotal:function(value){
+    //         console.log(`The total is ${this.a+this.b+value}`);
+    //     }
+    // }
+    // calculate.calculateTotal(100);
 
 
 
     //create an object called car
     //create two properties Make, Year
     //Create a method called setMake("BMW");
-    //Create two method called setYear("2022");
+    //Create a method called setYear("2022");
     //Create a method called park();
     //After you called park method the return should
     // be like as follows
     // BMW - 2022 is parking
+
+    var car={
+        make:'',
+        year:'',
+        setMake:function(m){
+            this.make=m;
+        },
+        setYear:function(y){
+            this.year=y;
+        },
+        park:function(){
+            console.log(`${this.make} - ${this.year} is parking`)
+        }
+    }
+
+
 
 
 
