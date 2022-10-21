@@ -760,6 +760,31 @@
     customer.name="Kamal"; // now it doesn't change
 
 
+    // so how to view all the property descriptors of
+    //a property
+    Object.getOwnPropertyDescriptor(customer,'name');
+    // {configurable:true,enumerable:true,value:"Kavindu",writable:true}
+
+
+    //default descriptors values
+    // {configurable:true,enumerable:true,value:"Kavindu",writable:true}
+
+    //Writable : true (default)
+    //By changing this to false we can make read only properties
+
+    //Enumerable: true (default)
+    // By changing this to false we can hide the visible state
+    //of the property key
+    //Object.keys(customer); //not catching
+
+    Object.defineProperty(customer,'name',{
+        enumerable:false
+    });
+    Object.keys(customer); //return empty array
+    //name is not tracking
+
+    //Configurable : true (default)
+    //..?
 
 
 
