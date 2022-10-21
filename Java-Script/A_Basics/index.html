@@ -841,9 +841,9 @@
         //- If the value is not directly assigned and
         // if getter and setter are used to set values
         // we called them as accessor properties
-    var customer={
-        id:'C001' // data properties
-    }
+    // var customer={
+    //     id:'C001' // data properties
+    // }
 
     //accessor properties
     //get
@@ -851,33 +851,51 @@
     //configurable :false
     //enumerable : false
 
-    Object.defineProperty(customer,'name',{
-        get(){
-            return name;
-        },
-        set(nv){
-            name=nv;
-        }
-    });
+    // Object.defineProperty(customer,'name',{
+    //     get(){
+    //         return name;
+    //     },
+    //     set(nv){
+    //         name=nv;
+    //     }
+    // });
 
-    customer.name='Kasun'; //setter
-    customer.name; //getter
+    // customer.name='Kasun'; //setter
+    // customer.name; //getter
 
     //create an accessor property called salary which can
     // delete
     // search from Object.keys();
-    var d={};
+    // var d={};
+    //
+    // Object.defineProperty(d,'salary',{
+    //     get(){
+    //         return salary;
+    //     },
+    //     set(nv){
+    //         salary=nv;
+    //     },
+    //     configurable:true,
+    //     enumerable:true
+    // });
+    //
 
-    Object.defineProperty(d,'salary',{
-        get(){
-            return salary;
-        },
-        set(nv){
-            salary=nv;
-        },
-        configurable:true,
-        enumerable:true
-    });
+    //create an object called calculate
+    // a = 100
+    // b =200
+    // create a method called calculateTotal(400)
+    // The total is 700
+    var calculate={
+        a:100,
+        b:200,
+        calculateTotal:function(value){
+            console.log(`The total is ${this.a+this.b+value}`);
+        }
+    }
+    calculate.calculateTotal(100);
+
+
+
 
 
 
