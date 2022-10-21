@@ -727,23 +727,23 @@
 
 
     // Let's explore objects furthermore
-    var customer={
-        id:"C001"
-    };
+    // var customer={
+    //     id:"C001"
+    // };
 
     //can we change values of an object// yes
-    customer.id="C002";
+    // customer.id="C002";
 
     //can we add properties dynamically to an object //yes
-    customer.name="Kamal";
-    customer.age=20;
+    // customer.name="Kamal";
+    // customer.age=20;
 
     //can we delete properties of an object.? //yes
-    delete customer.id;
+    // delete customer.id;
 
     //can we get all the keys object of an object at
     // once.? //yes
-    Object.keys(customer);
+    // Object.keys(customer);
 
     //So can we manage them as we wanted? //yes
     //how.? we have
@@ -754,15 +754,15 @@
 
 
     // How to make properties values read-only
-    Object.defineProperty(customer,'name',{
-        writable:false
-    })
-    customer.name="Kamal"; // now it doesn't change
+    // Object.defineProperty(customer,'name',{
+    //     writable:false
+    // })
+    // customer.name="Kamal"; // now it doesn't change
 
 
     // so how to view all the property descriptors of
     //a property
-    Object.getOwnPropertyDescriptor(customer,'name');
+    // Object.getOwnPropertyDescriptor(customer,'name');
     // {configurable:true,enumerable:true,value:"Kavindu",writable:true}
 
 
@@ -777,16 +777,54 @@
     //of the property key
     //Object.keys(customer); //not catching
 
-    Object.defineProperty(customer,'name',{
-        enumerable:false
-    });
-    Object.keys(customer); //return empty array
+    // Object.defineProperty(customer,'name',{
+    //     enumerable:false
+    // });
+    // Object.keys(customer); //return empty array
     //name is not tracking
 
     //Configurable : true (default)
     //..?
+    var customer={
+        id:'C001',
+        name:'Dasun'
+    }
+
+    Object.getOwnPropertyDescriptor(customer,'id',{
+        writable:false,
+        configurable:false
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'id',{
+        writable:true, //error
+        configurable:true // error, once you changed you can't redo it
+    });
+
+    // Now what we can do.?
+    // we cannot delete the property
+    // we cannot change any property descriptors
+
+    // But we have one change
+    // After changing configurable to false, if the
+    // writable was in true state we can change it to
+    // false for the one last time
+    // but after that we cant change it again
 
 
+    Object.getOwnPropertyDescriptor(customer,'name',{
+        writable:true,
+        configurable:false
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'name',{
+        writable:false, //allow, only once allowed
+        configurable:false
+    });
+
+    Object.getOwnPropertyDescriptor(customer,'name',{
+        writable:true, //error
+        configurable:false
+    });
 
 
 
