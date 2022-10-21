@@ -785,20 +785,20 @@
 
     //Configurable : true (default)
     //..?
-    var customer={
-        id:'C001',
-        name:'Dasun'
-    }
-
-    Object.getOwnPropertyDescriptor(customer,'id',{
-        writable:false,
-        configurable:false
-    });
-
-    Object.getOwnPropertyDescriptor(customer,'id',{
-        writable:true, //error
-        configurable:true // error, once you changed you can't redo it
-    });
+    // var customer={
+    //     id:'C001',
+    //     name:'Dasun'
+    // }
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id',{
+    //     writable:false,
+    //     configurable:false
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'id',{
+    //     writable:true, //error
+    //     configurable:true // error, once you changed you can't redo it
+    // });
 
     // Now what we can do.?
     // we cannot delete the property
@@ -811,20 +811,39 @@
     // but after that we cant change it again
 
 
-    Object.getOwnPropertyDescriptor(customer,'name',{
-        writable:true,
-        configurable:false
-    });
+    // Object.getOwnPropertyDescriptor(customer,'name',{
+    //     writable:true,
+    //     configurable:false
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'name',{
+    //     writable:false, //allow, only once allowed
+    //     configurable:false
+    // });
+    //
+    // Object.getOwnPropertyDescriptor(customer,'name',{
+    //     writable:true, //error
+    //     configurable:false
+    // });
 
-    Object.getOwnPropertyDescriptor(customer,'name',{
-        writable:false, //allow, only once allowed
-        configurable:false
-    });
 
-    Object.getOwnPropertyDescriptor(customer,'name',{
-        writable:true, //error
-        configurable:false
-    });
+    // There are two types of properties
+
+    //Data Property
+        //-If the value is directly assigned to the property
+        // it is known as a data property
+
+    // Accessor Properties
+        //- If the value is not directly assigned and
+        // if getter and setter are used to set values
+        // we called them as accessor properties
+    var customer={
+        id:'C001' // data properties
+    }
+
+    //accessor properties
+
+
 
 
 
