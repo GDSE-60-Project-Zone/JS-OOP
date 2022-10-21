@@ -905,24 +905,70 @@
     // be like as follows
     // BMW - 2022 is parking
 
-    var car={
-        make:'',
-        year:'',
-        setMake:function(m){
-            this.make=m;
-        },
-        setYear:function(y){
-            this.year=y;
-        },
-        park:function(){
-            console.log(`${this.make} - ${this.year} is parking`)
-        }
+    // var car={
+    //     make:'',
+    //     year:'',
+    //     setMake:function(m){
+    //         this.make=m;
+    //     },
+    //     setYear:function(y){
+    //         this.year=y;
+    //     },
+    //     park:function(){
+    //         console.log(`${this.make} - ${this.year} is parking`)
+    //     }
+    // }
+    //
+    //
+    // car.setMake("BMW");
+    // car.setYear("2022");
+    // car.park();
+
+
+    //functional base objects
+    // function Customer(){
+    //     this.id="C001";
+    // }
+    // var customer= new Customer();
+
+
+    // function getMyDetails(name,id){
+    //     console.log(`${name} & ${id}`)
+    // }
+    //
+    // new getMyDetails("Dasun","C001");
+    //
+    //
+    // var c=new Car("BMW","2022");
+    // c.park();
+
+
+    // Conventions
+    function getMyData(){
+        //normal method
+    }
+    function Car(){
+        //for an object
     }
 
+    function testMethod(){
+        var a=10;
+        var b="D";
+        var state=true;
+    }
 
-    car.setMake("BMW");
-    car.setYear("2022");
-    car.park();
+    var m=new testMethod(); // convention wrong
+    m.a;// not accessible // haven't used this.
+
+    function Customer(){
+        var id="C001"; // not accessible for objects
+        this.name="Ramal"; // can access
+    }
+    var customer=new Customer();
+    // c.id;// error
+    c.name; //Ramal
+
+
 
 
 
