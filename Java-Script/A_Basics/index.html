@@ -851,6 +851,33 @@
     //configurable :false
     //enumerable : false
 
+    Object.defineProperty(customer,'name',{
+        get(){
+            return name;
+        },
+        set(nv){
+            name=nv;
+        }
+    });
+
+    customer.name='Kasun'; //setter
+    customer.name; //getter
+
+    //create an accessor property called salary which can
+    // delete
+    // search from Object.keys();
+    var d={};
+
+    Object.defineProperty(d,'salary',{
+        get(){
+            return salary;
+        },
+        set(nv){
+            salary=nv;
+        },
+        configurable:true,
+        enumerable:true
+    });
 
 
 
