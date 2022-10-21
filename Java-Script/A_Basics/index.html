@@ -627,7 +627,6 @@
     // console.log(output);
 
 
-
     // What about method Overloading
     // Is it working in JS.?
 
@@ -645,8 +644,6 @@
     //Here overloading is not supporting
     //When there are two or more methods with the same
     //name it gets the last method
-
-
 
 
     //How arguments work in JS functions
@@ -688,8 +685,6 @@
     // }
     //
     // getMyData()(); // how to call that returned function
-
-
 
 
     // Object to Continue
@@ -830,17 +825,17 @@
     // There are two types of properties
 
     //Data Property
-        //-If the value is directly assigned to the property
-        // it is known as a data property
-        //value : 'value'
-        //writable : true
-        //configurable : true
-        //enumerable : true
+    //-If the value is directly assigned to the property
+    // it is known as a data property
+    //value : 'value'
+    //writable : true
+    //configurable : true
+    //enumerable : true
 
     // Accessor Properties
-        //- If the value is not directly assigned and
-        // if getter and setter are used to set values
-        // we called them as accessor properties
+    //- If the value is not directly assigned and
+    // if getter and setter are used to set values
+    // we called them as accessor properties
     // var customer={
     //     id:'C001' // data properties
     // }
@@ -895,7 +890,6 @@
     // calculate.calculateTotal(100);
 
 
-
     //create an object called car
     //create two properties Make, Year
     //Create a method called setMake("BMW");
@@ -943,39 +937,42 @@
     // c.park();
 
 
-    // Conventions
-    function getMyData(){
-        //normal method
+    // // Conventions
+    // function getMyData(){
+    //     //normal method
+    // }
+    // function Car(){
+    //     //for an object
+    // }
+
+    // function testMethod(){
+    //     var a=10;
+    //     var b="D";
+    //     var state=true;
+    // }
+    //
+    // var m=new testMethod(); // convention wrong
+    // m.a;// not accessible // haven't used this.
+    //
+    // function Customer(){
+    //     var id="C001"; // not accessible for objects
+    //     this.name="Ramal"; // can access
+    // }
+    // var customer=new Customer();
+    // // c.id;// error
+    // c.name; //Ramal
+
+    function Car(make, year) {
+        this.make = make;
+        this.year = year;
+        this.park = function () {
+            console.log(`${this.make} - ${this.year} is parking`)
+        }
     }
-    function Car(){
-        //for an object
-    }
-
-    function testMethod(){
-        var a=10;
-        var b="D";
-        var state=true;
-    }
-
-    var m=new testMethod(); // convention wrong
-    m.a;// not accessible // haven't used this.
-
-    function Customer(){
-        var id="C001"; // not accessible for objects
-        this.name="Ramal"; // can access
-    }
-    var customer=new Customer();
-    // c.id;// error
-    c.name; //Ramal
-
-
-
-
-
-
-
-
-
+    var car = new Car("BMW", "2020");
+    // car.make;
+    // car.year;
+    // car.park();
 
 
 </script>
