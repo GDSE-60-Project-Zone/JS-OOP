@@ -785,12 +785,12 @@
     //     name:'Dasun'
     // }
     //
-    // Object.getOwnPropertyDescriptor(customer,'id',{
+    // Object.defineProperty(customer,'id',{
     //     writable:false,
     //     configurable:false
     // });
     //
-    // Object.getOwnPropertyDescriptor(customer,'id',{
+    // Object.defineProperty(customer,'id',{
     //     writable:true, //error
     //     configurable:true // error, once you changed you can't redo it
     // });
@@ -806,17 +806,17 @@
     // but after that we cant change it again
 
 
-    // Object.getOwnPropertyDescriptor(customer,'name',{
+    // Object.defineProperty(customer,'name',{
     //     writable:true,
     //     configurable:false
     // });
     //
-    // Object.getOwnPropertyDescriptor(customer,'name',{
+    // Object.defineProperty(customer,'name',{
     //     writable:false, //allow, only once allowed
     //     configurable:false
     // });
     //
-    // Object.getOwnPropertyDescriptor(customer,'name',{
+    // Object.defineProperty(customer,'name',{
     //     writable:true, //error
     //     configurable:false
     // });
