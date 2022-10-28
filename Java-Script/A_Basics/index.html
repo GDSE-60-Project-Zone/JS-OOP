@@ -992,39 +992,39 @@
     //How to encapsulate a function base Object in JS
 
     function CustomerDTO(id,name,address,salary){
-        var id=id;
-        var name=name;
-        var address=address;
-        var salary=salary;
+        var __id=id;
+        var __name=name;
+        var __address=address;
+        var __salary=salary;
 
         this.getMyID=function(){
-            return id;
+            return __id;
         }
         this.setMyID=function (newID){
-            id=newID;
+            __id=newID;
         }
         this.getMyName=function(){
-            return name;
+            return __name;
         }
         this.setMyName=function (newName){
-            name=newName;
+            __name=newName;
         }
         this.getMyAddress=function(){
-            return address;
+            return __address;
         }
         this.setMyAddress=function (newAddress){
-            address=newAddress;
+            __address=newAddress;
         }
         this.getSalary=function (){
-            return salary;
+            return __salary;
         }
         this.setMySalary=function (newSalary){
-            salary=newSalary;
+            __salary=newSalary;
         }
     }
 
     var customer= new CustomerDTO("C001","Dasun","Galle",1000);
-    // customer.id; //undefined
+    // customer.__id; //undefined
 
     customer.getMyID(); //C001
     customer.setMyID("C002");
