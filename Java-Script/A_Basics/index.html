@@ -1034,65 +1034,77 @@
     // What is prototype in JS.?
     // What is the usage.?
 
-    var customer={
-
-    }
-
-    customer.__proto__;// we haven't defined any properties. then how this __proto__ came.?
-
-    //Inheritance of JS.?
-
-    // As usually in JS too we have a root Object which is created by using a function
-    // So all functions have prototype which used to maintain there inheritance hierarchy
-    console.dir(Object.prototype); // View the prototype Object
-
-    //There are Two properties which is involved to maintain the inheritance hierarchy of JS
-    // prototype (contains on every function and has the link of its own prototype)
-    // __proto__ (keeps the direct link to its prototype or function)
-    // constructor (used to relink its function)
-
-    customer.__proto__==Object.prototype;
-    // we can use conditions to check these constrain
-
-    Object.prototype.testID="C0009"; // we can add properties to the prototypes at anytime because they are dynamic
-
-    customer.testID// can access, no issue  // C0009
-
-    //Let's create a new object and check
-    var c2={}
-    c2.testID;// works fine // C0009
-
-    //Literal base objects inheritance hierarchy works through Object functions prototype
+    // var customer={
+    //
+    // }
+    //
+    // customer.__proto__;// we haven't defined any properties. then how this __proto__ came.?
+    //
+    // //Inheritance of JS.?
+    //
+    // // As usually in JS too we have a root Object which is created by using a function
+    // // So all functions have prototype which used to maintain there inheritance hierarchy
+    // console.dir(Object.prototype); // View the prototype Object
+    //
+    // //There are Two properties which is involved to maintain the inheritance hierarchy of JS
+    // // prototype (contains on every function and has the link of its own prototype)
+    // // __proto__ (keeps the direct link to its prototype or function)
+    // // constructor (used to relink its function)
+    //
+    // customer.__proto__==Object.prototype;
+    // // we can use conditions to check these constrain
+    //
+    // Object.prototype.testID="C0009"; // we can add properties to the prototypes at anytime because they are dynamic
+    //
+    // customer.testID// can access, no issue  // C0009
+    //
+    // //Let's create a new object and check
+    // var c2={}
+    // c2.testID;// works fine // C0009
+    //
+    // //Literal base objects inheritance hierarchy works through Object functions prototype
 
 
 
     // So how the function base Objects works with inheritance.?
 
     // create a function called customer
-    function Customer(){
-        this.id="C002"; // property
-    }
+    // function Customer(){
+    //     this.id="C002"; // property
+    // }
+    //
+    // var c= new Customer(); // create an object using Customer Function
+    //
+    // Customer.prototype;// so here also we have a prototype
+    //
+    // Customer.prototype.__proto__; // and inherited properties
+    //
+    // c.id; //C002
+    //
+    // //create another object using Customer function
+    // var c1= new Customer();
+    //
+    // // Adding a property to the customer prototype
+    // Customer.prototype.name="IJSE";
+    //
+    // c.name; // can access
+    // c1.name; // can access
+    //
+    // console.dir(c1.__proto__); // check the c1 object prototype
 
-    var c= new Customer(); // create an object using Customer Function
 
-    Customer.prototype;// so here also we have a prototype
+    //Function Involvement for Inheritance Hierarchy
+    //There is a predefined function called Function which we can use for creating function
+    console.dir(Function);
+    console.dir(Function.prototype);
 
-    Customer.prototype.__proto__; // and inherited properties
+    Function.__proto__==Object.__proto__; //true
+    Object.prototype.__proto__==null; // because there is one which is helping for creating Object's prototype
 
-    c.id; //C002
+    Function.prototype.__proto__==Object.prototype;//true // Normally all prototypes are created by referring Objects prototype
+    Customer.prototype.__proto__==Object.prototype//true
 
-    //create another object using Customer function
-    var c1= new Customer();
-
-    // Adding a property to the customer prototype
-    Customer.prototype.name="IJSE";
-
-    c.name; // can access
-    c1.name; // can access
-
-    console.dir(c1.__proto__); // check the c1 object prototype
-
-
+    // Refer the board for more data
 
 
 </script>
