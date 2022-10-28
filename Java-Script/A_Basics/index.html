@@ -1107,6 +1107,29 @@
     // Refer the board for more data
 
 
+
+
+    //Implement Inheritance Using Car and Vehicle
+
+    function Vehicle(){}
+    function Car(){}
+
+    var c1= new Car();
+    var v1= new Vehicle();
+
+    //adding values to vehicle prototype
+    Vehicle.prototype.make="Toyota";
+    Vehicle.prototype.year=2022;
+
+
+    Car.prototype=Vehicle.prototype; // assign vehicle prototype to car prototype
+
+    var c2= new Car();
+    c2.make// accessible
+    c2.year //accessible
+
+
+
 </script>
 </body>
 </html>
