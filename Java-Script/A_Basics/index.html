@@ -1095,38 +1095,64 @@
 
     //Function Involvement for Inheritance Hierarchy
     //There is a predefined function called Function which we can use for creating function
-    console.dir(Function);
-    console.dir(Function.prototype);
+    // console.dir(Function);
+    // console.dir(Function.prototype);
+    //
+    // Function.__proto__==Object.__proto__; //true
+    // Object.prototype.__proto__==null; // because there is one which is helping for creating Object's prototype
+    //
+    // Function.prototype.__proto__==Object.prototype;//true // Normally all prototypes are created by referring Objects prototype
+    // Customer.prototype.__proto__==Object.prototype//true
+    //
+    // // Refer the board for more data
+    //
+    //
+    //
+    //
+    // //Implement Inheritance Using Car and Vehicle
+    //
+    // function Vehicle(){}
+    // function Car(){}
+    //
+    // var c1= new Car();
+    // var v1= new Vehicle();
+    //
+    // //adding values to vehicle prototype
+    // Vehicle.prototype.make="Toyota";
+    // Vehicle.prototype.year=2022;
+    //
+    //
+    // Car.prototype=Vehicle.prototype; // assign vehicle prototype to car prototype
+    //
+    // var c2= new Car();
+    // c2.make// accessible
+    // c2.year //accessible
+    //
 
-    Function.__proto__==Object.__proto__; //true
-    Object.prototype.__proto__==null; // because there is one which is helping for creating Object's prototype
-
-    Function.prototype.__proto__==Object.prototype;//true // Normally all prototypes are created by referring Objects prototype
-    Customer.prototype.__proto__==Object.prototype//true
-
-    // Refer the board for more data
 
 
-
-
-    //Implement Inheritance Using Car and Vehicle
-
+    // Second Case
     function Vehicle(){}
+
     function Car(){}
 
+    Vehicle.prototype.make="Benz";
+
+    Vehicle.prototype.year="2019";
+
+    var v1=new Vehicle();
+
     var c1= new Car();
-    var v1= new Vehicle();
-
-    //adding values to vehicle prototype
-    Vehicle.prototype.make="Toyota";
-    Vehicle.prototype.year=2022;
 
 
-    Car.prototype=Vehicle.prototype; // assign vehicle prototype to car prototype
+    Car.prototype.__proto__=Vehicle.prototype;
+    console.dir(Car.prototype);
+    Vehicle.prototype.honking="Peeek";
+    v1.honking
+    c1.honking
+    Car.prototype.wheelType="Four Wheel";
+    c1.wheelType
 
-    var c2= new Car();
-    c2.make// accessible
-    c2.year //accessible
 
 
 
