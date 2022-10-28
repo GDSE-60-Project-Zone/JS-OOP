@@ -1066,6 +1066,32 @@
 
 
 
+    // So how the function base Objects works with inheritance.?
+
+    // create a function called customer
+    function Customer(){
+        this.id="C002"; // property
+    }
+
+    var c= new Customer(); // create an object using Customer Function
+
+    Customer.prototype;// so here also we have a prototype
+
+    Customer.prototype.__proto__; // and inherited properties
+
+    c.id; //C002
+
+    //create another object using Customer function
+    var c1= new Customer();
+
+    // Adding a property to the customer prototype
+    Customer.prototype.name="IJSE";
+
+    c.name; // can access
+    c1.name; // can access
+
+    console.dir(c1.__proto__); // check the c1 object prototype
+
 
 
 
