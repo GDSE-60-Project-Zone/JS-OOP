@@ -1131,27 +1131,64 @@
 
 
 
-    // Second Case
-    function Vehicle(){}
+    // // Second Case
+    // function Vehicle(){}
+    //
+    // function Car(){}
+    //
+    // Vehicle.prototype.make="Benz";
+    //
+    // Vehicle.prototype.year="2019";
+    //
+    // var v1=new Vehicle();
+    //
+    // var c1= new Car();
+    //
+    //
+    // Car.prototype.__proto__=Vehicle.prototype;
+    // console.dir(Car.prototype);
+    // Vehicle.prototype.honking="Peeek";
+    // v1.honking
+    // c1.honking
+    // Car.prototype.wheelType="Four Wheel";
+    // c1.wheelType
 
-    function Car(){}
-
-    Vehicle.prototype.make="Benz";
-
-    Vehicle.prototype.year="2019";
-
-    var v1=new Vehicle();
-
-    var c1= new Car();
 
 
-    Car.prototype.__proto__=Vehicle.prototype;
-    console.dir(Car.prototype);
-    Vehicle.prototype.honking="Peeek";
-    v1.honking
-    c1.honking
-    Car.prototype.wheelType="Four Wheel";
-    c1.wheelType
+
+    //final task
+    function Animal(name,sound){
+        this.name=name;
+        this.sound=sound;
+        this.cry=function(){
+            console.log(this.name+" is "+this.sound);
+        }
+    }
+
+    function Dog(name,sound){
+        Animal.apply(this,arguments);
+    }
+
+    function Cat(name,sound){
+        Animal.apply(this,arguments);
+    }
+    var d1= new Dog("Blacky","Bark");
+    d1.cry();
+
+    var c1=new Cat("Tommy","Meow");
+    c1.cry();
+
+    Animal.prototype.testRun="Runing";
+
+    Dog.prototype.__proto__=Animal.prototype;
+
+    Cat.prototype.__proto__=Animal.prototype;
+
+    c1.testRun
+    // 'Runing'
+
+    d1.testRun
+    // 'Runing'
 
 
 
