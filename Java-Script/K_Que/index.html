@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Que With JS</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #container{
+            height: 80px;
+            width: 90vw;
+            border-bottom: 2px dashed red;
+            display: flex;
+            justify-content: flex-end;
+        }
+        #container>div{
+            width: 100px;
+            height: 70px;
+            background-color: red;
+            color: white;
+            position: relative;
+            border: 1px solid #584b4b;
+            border-radius: 10px;
+            margin-right: 8px;
+        }
+        #container>div>h1{
+            font-size: 25px;
+            width: max-content;
+            height: max-content;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin:auto;
+        }
+        main{
+            position: relative;
+        }
+        #img{
+            height: 110px;
+            width: 110px;
+            background: url("assets/img/img.png");
+            position: absolute;
+            top: -13px;
+            right: 0;
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<section class="container-fluid">
+    <section class="row mt-3">
+        <section class="col-4">
+            <div class="mb-3">
+                <label  class="form-label">Name</label>
+                <input type="text" class="form-control" id="txtName">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Color</label>
+                <input type="color" class="form-control" id="txtColor" >
+            </div>
+            <div>
+                <button class="btn btn-danger">Add to Que</button>
+            </div>
+        </section>
+    </section>
+
+    <main>
+        <section id="container" class="mt-5">
+
+        </section>
+        <section id="img">
+
+        </section>
+    </main>
+
+</section>
+
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+
+    var cueData={
+        persons:[
+            {name:'Sadun', color:'red'},
+            {name:'Kavindu', color:'green'},
+            {name:'Ayesh', color:'blue'}
+        ],
+        nextPerson:function (){
+           var lastPerson= this.persons.pop();
+           this.persons.unshift(lastPerson);
+        }
+    }
+
+
+    renderQue();
+    function renderQue(){
+        $("#container").empty();
+        for (let i = 0; i < cueData.persons.length; i++) {
+            $("#container").append(`<div style="background-color: ${cueData.persons[i].color}"><h1>${cueData.persons[i].name}</h1></div>`);
+        }
+        cueData.nextPerson();
+    }
+
+    setInterval(renderQue,900);
+
+
+</script>
+</body>
+</html>
