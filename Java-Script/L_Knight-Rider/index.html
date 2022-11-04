@@ -55,13 +55,13 @@
   // renderKnightRider();
 
   function animateRight(){
-    let firstValue=rightColors.shift();
-    rightColors.push(firstValue);
+    let firstValue=initArray.shift();
+    initArray.push(firstValue);
   }
 
   function animateLeft(){
-    let lastColor=leftColors.pop();
-      leftColors.unshift(lastColor);
+    let lastColor=initArray.pop();
+      initArray.unshift(lastColor);
   }
 
   var count=0;
@@ -88,7 +88,7 @@
       animate();
   }
 
-  // setInterval(renderKnightRider,100);
+  setInterval(renderKnightRider,100);
 </script>
 </body>
 </html>
