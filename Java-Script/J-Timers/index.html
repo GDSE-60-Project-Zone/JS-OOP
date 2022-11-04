@@ -50,19 +50,28 @@
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
 
-    var colors=['red','green','oranged','blue','deeppink'];
+    var colors=['red','green','orange','blue','deeppink'];
 
-    for (let i = 0; i <colors.length ; i++) {
-        $('#display').css('background', colors[i]);
+    // for (let i = 0; i <colors.length ; i++) {
+    //     $('#display').css('background', colors[i]);
+    // }
+    let count=0;
+    function setColors(){
+        $('#display').css('background', colors[count]);
+        count++;
+        if (count==colors.length){
+            count=0;
+        }
     }
 
+    setInterval(setColors,400);
     //timers
     // setTimeout();
     // setInterval();
 
 
     // setTimeout(invokeMeLater,5000); call the method only one time after completing the time
-    setInterval(invokeMeLater,1000); // call the method repeatedly on every round of time completing
+    // setInterval(invokeMeLater,1000); // call the method repeatedly on every round of time completing
 
     function invokeMeLater(){
         console.log("Method Invoked")
