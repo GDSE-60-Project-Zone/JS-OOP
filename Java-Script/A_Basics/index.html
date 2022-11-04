@@ -1157,38 +1157,102 @@
 
 
     //final task
-    function Animal(name,sound){
-        this.name=name;
-        this.sound=sound;
-        this.cry=function(){
-            console.log(this.name+" is "+this.sound);
+    // function Animal(name,sound){
+    //     this.name=name;
+    //     this.sound=sound;
+    //     this.cry=function(){
+    //         console.log(this.name+" is "+this.sound);
+    //     }
+    // }
+    //
+    // function Dog(name,sound){
+    //     Animal.apply(this,arguments);
+    // }
+    //
+    // function Cat(name,sound){
+    //     Animal.apply(this,arguments);
+    // }
+    // var d1= new Dog("Blacky","Barking");
+    // d1.cry();
+    //
+    // var c1=new Cat("Tommy","Meowing");
+    // c1.cry();
+    //
+    // Animal.prototype.testRun="Running";
+    //
+    // Dog.prototype.__proto__=Animal.prototype;
+    //
+    // Cat.prototype.__proto__=Animal.prototype;
+    //
+    // c1.testRun
+    // // 'Running'
+    //
+    // d1.testRun
+    // // 'Running'
+
+
+
+    // function A(id,name){
+    //     this.id=id;
+    //     this.name=name;
+    //     this.test=function (){
+    //         console.log("Hello")
+    //     }
+    // }
+    // var a= new A("C001","Ranuka");
+
+
+    // class B{
+    //     constructor(id,name) {
+    //         this.id=id;
+    //         this.name=name;
+    //     }
+    //     testMethod(){
+    //         console.log(`Hello ${this.name} : ${this.name}.! How are you.?`)
+    //     }
+    // }
+    // var a1= new B("C001","Dasun");
+    // a1.testMethod();
+
+
+    // class CustomerDTO{
+    //     #id;
+    //     #name;
+    //     #address;
+    //     #salary;
+    //     constructor(id,name,address,salary) {
+    //         this.#id=id;
+    //         this.#name=name;
+    //         this.#address=address;
+    //         this.#salary=salary;
+    //     }
+    //     getCustomerID(){
+    //         return this.#id;
+    //     }
+    //     setCustomerID(id){
+    //        this.#id=id;
+    //     }
+    // }
+
+
+    class A{
+        constructor(id,name) {
+            this.id=id;
+            this.name=name;
+        }
+        getMyData(){
+            console.log(`${this.id} and ${this.name}`);
         }
     }
 
-    function Dog(name,sound){
-        Animal.apply(this,arguments);
+    class B extends A{
+        constructor(id,name) {
+            super(id,name);
+        }
     }
 
-    function Cat(name,sound){
-        Animal.apply(this,arguments);
-    }
-    var d1= new Dog("Blacky","Bark");
-    d1.cry();
-
-    var c1=new Cat("Tommy","Meow");
-    c1.cry();
-
-    Animal.prototype.testRun="Runing";
-
-    Dog.prototype.__proto__=Animal.prototype;
-
-    Cat.prototype.__proto__=Animal.prototype;
-
-    c1.testRun
-    // 'Runing'
-
-    d1.testRun
-    // 'Runing'
+    var b= new B("C001","Kasun");
+    b.getMyData();
 
 
 
