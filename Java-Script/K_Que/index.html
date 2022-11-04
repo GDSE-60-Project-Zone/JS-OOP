@@ -61,7 +61,7 @@
                 <input type="color" class="form-control" id="txtColor" >
             </div>
             <div>
-                <button class="btn btn-danger">Add to Que</button>
+                <button class="btn btn-danger" id="btnAdd">Add to Que</button>
             </div>
         </section>
     </section>
@@ -104,6 +104,14 @@
     }
 
     setInterval(renderQue,900);
+
+
+    //Add a person to the que
+    $('#btnAdd').click(function (){
+       let name= $("#txtName").val();
+       let color= $("#txtColor").val();
+       cueData.persons.unshift({name:name,color:color});
+    });
 
 
 </script>
